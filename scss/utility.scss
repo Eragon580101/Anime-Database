@@ -1,0 +1,12 @@
+@mixin flex($gap: 0, $direction: row, $center: true) {
+    display: flex;
+    flex-direction: $direction;
+    @if $center {
+      align-items: center;
+      justify-items: center;
+      justify-content: space-between;
+    }
+    @if ($gap > 0) {
+      gap: $gap + rem;
+    }
+  }

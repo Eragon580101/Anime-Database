@@ -1,0 +1,60 @@
+@use "@/scss/utility" as *;
+.herocontainer {
+  background: url(/hero2.jpg) no-repeat top;
+  background-size: cover;
+}
+
+.hero {
+  padding: 5em 2em;
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgba(3, 37, 65, 0.4) 0%,
+    rgba(3, 37, 65, 0.8) 100%
+  );
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero > p {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+.hero .search {
+  width: 100%;
+  height: fit-content;
+  background: white;
+  border-radius: 100vh;
+  overflow: hidden;
+  display: flex;
+  border: 0;
+  outline: 0;
+}
+
+.search input {
+  width: 100%;
+  font-size: 1.23rem;
+  padding: 0.5em 2em;
+  background: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.search button {
+  border-radius: 100vh;
+  padding: 0.5em 2em;
+  background: linear-gradient(90deg, rgba(0, 255, 157, 0.9), rgb(0, 225, 255));
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  width: clamp(120px, 10vw, 9rem);
+  font-weight: bold;
+  color: white;
+}
+

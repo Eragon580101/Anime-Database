@@ -1,0 +1,98 @@
+@use '@/scss/utility' as *;
+
+.navWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
+  background: #0a2440;
+  height: 64px;
+}
+
+.navbar {
+  @include flex();
+  padding: 0.5em 3rem;
+  color: #fff;
+
+  .left {
+    @include flex();
+    .logo {
+      width: clamp(100px, 20vw, 150px);
+    }
+
+    ul {
+      @include flex($gap: 2);
+      width: 30%;
+      font-weight: bold;
+
+      li {
+        position: relative;
+        isolation: isolate;
+
+        &[data-active="true"]::after {
+          width: 50%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: #fff;
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        @include flex($gap: 1, $direction: column);
+        align-items: flex-start;
+        display: none;
+      }
+    }
+  }
+  .right {
+    @include flex($gap: 3);
+    a {
+      text-transform: capitalize;
+
+      font-weight: bold;
+
+      border: 1px solid #b9b9b9;
+      border-radius: 100vh;
+      padding: 0.5em 1em;
+
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 0;
+        z-index: -1;
+        background: #fff;
+        transition: width 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: #0a2440;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      @include flex($gap: 1, $direction: column);
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@use "@/scss/utility" as *;
+.trending {
+  @include flex($gap: 1.5, $center: false);
+  overflow-x: scroll;
+  padding: 0.1em 0;
+  transition: all 0.3s ease-in;
+  width: 100%;
+}
+
+.trendingContainer {
+  padding-left: 40px;
+  margin: 0.5em;
+}
+
+.CardContainer {
+  --bg : url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+  background: var(--bg) ;
+  background-repeat: repeat no-repeat;
+  background-position: bottom -40px left -100px;
+  padding-left: 1em;
+  position: relative;
+
+  &::before{
+    content: "";
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to right,rgba(255,255,255,0)0,#fff 100%);
+    pointer-events: none;
+    z-index: 100;
+  }
+
+}
+
+.trendingContainer > div > p {
+  font-size: 1.5rem;
+  padding: 1em 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter {
+  display: flex;
+  border-radius: 100vh;
+  border: 1px solid black;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.filter > * {
+  flex: 1;
+}
+
+.filter > button {
+  border-radius: 100vh;
+  padding: 0.1em 2em;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(3, 37, 65, 1);
+  width: 50%;
+  // text in a single line only
+  white-space: nowrap;
+  --translate: 0%;
+  font-size: 0.8rem;
+}
+
+.filter > button[data-active="true"] {
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filter::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 100vh;
+  transition: all 0.2s ease-in;
+  transform: translateX(var(--translate));
+  background: rgba(3, 37, 65, 1);
+}
