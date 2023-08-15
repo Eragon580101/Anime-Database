@@ -1,6 +1,5 @@
 "use client";
 // Dummy Imports
-import { trendingAnimeMovie, trendingAnime } from "@/DummyData";
 
 import styles from "./page.module.scss";
 import { useEffect, useState } from "react";
@@ -8,7 +7,7 @@ import { AnimeResponseData } from "@/Types";
 import { Scroll } from "@/components";
 
 export default function Home() {
-  const [data, setData] = useState<AnimeResponseData[]>(trendingAnime);
+  const [data, setData] = useState<AnimeResponseData[]>([]);
   const [active, setActive] = useState<string | undefined>("TV");
 
   useEffect(() => {
@@ -29,7 +28,7 @@ export default function Home() {
   }, [active]);
 
   return (
-    <main className="container">
+    data.length > 0 && <main className="container">
       <div className={styles.herocontainer}>
         <div className={styles.hero}>
           <h1>Welcome.</h1>
