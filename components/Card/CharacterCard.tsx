@@ -9,7 +9,6 @@ const CharacterCard: FC<CharacterCardProps> = ({
   name,
   role,
   favorites,
-  language: langauge,
   actor,
   characterName,
 }) => {

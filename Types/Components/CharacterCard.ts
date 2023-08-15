@@ -16,5 +16,6 @@ export interface CharacterCardProps {
     role?: string,
     favorites?: number,
     language?: string,
-
+    actor?: boolean,
+    characterName?: string,
 }
