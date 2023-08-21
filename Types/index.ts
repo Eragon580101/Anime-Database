@@ -1,8 +1,6 @@
 import { CardProps } from "./Components/Card";
-import { ScrollProps } from "./Components/Scroll";
 import { CharacterCardProps } from "./Components/CharacterCard";
-import { ResponseData, Title, Date, Extra, Image, MangaResponseData, Response, Trailer } from "./Data/Response";
+import { ScrollProps } from "./Components/Scroll";
+import { Date, Extra, Image, MangaResponseData, Response, ResponseData, Title, Trailer } from "./Data/Response";
 
-export type { Title, Date, Extra, Image, Response, Trailer };
-export type { ResponseData as AnimeResponseData, MangaResponseData }
-export type { CardProps, ScrollProps, CharacterCardProps };
+export type { ResponseData as AnimeResponseData, CardProps, CharacterCardProps, Date, Extra, Image, MangaResponseData, Response, ScrollProps, Title, Trailer };

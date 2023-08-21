@@ -1,8 +1,8 @@
 "use client";
+import { CharacterCardProps } from "@/Types";
 import Image from "next/image";
 import { FC, useEffect, useRef } from "react";
 import styles from "./Card.module.scss";
-import { CharacterCardProps } from "@/Types";
 
 const CharacterCard: FC<CharacterCardProps> = ({
   source,
