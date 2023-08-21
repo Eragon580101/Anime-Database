@@ -4,4 +4,4 @@ import Nav from "./Nav/Nav";
 import Scroll from "./Scroll/Scroll";
 
 
-export { Nav, Card, Scroll, CharacterCard };
+export { Card, CharacterCard, Nav, Scroll };

@@ -1,8 +1,8 @@
 "use client";
-import React, { BaseSyntheticEvent, FC, useRef } from "react";
-import { Card, CharacterCard } from "@/components";
-import styles from "./Scroll.module.scss";
 import { ScrollProps } from "@/Types";
+import { Card, CharacterCard } from "@/components";
+import React, { BaseSyntheticEvent, FC, useRef } from "react";
+import styles from "./Scroll.module.scss";
 
 const Scroll: FC<ScrollProps> = ({
   setActive,

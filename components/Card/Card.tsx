@@ -1,12 +1,12 @@
 "use client";
+import { CardProps } from "@/Types";
 import Image from "next/image";
+import Link from "next/link";
 import { FC, useEffect, useRef } from "react";
 import styles from "./Card.module.scss";
-import { CardProps } from "@/Types";
-import Link from "next/link";
 
 const Card: FC<CardProps> = ({
-  anime: { mal_id,images, title_english, title, year, score, aired },
+  anime: { mal_id, images, title_english, title, year, score, aired },
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
